@@ -20,6 +20,7 @@ import {
 import { AuthService } from './services/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './guards/auth.guard';
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AuthGuard } from './guards/auth.guard';
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,

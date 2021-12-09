@@ -18,10 +18,9 @@ export class AuthService {
 
   prepEndpoint(ep) {
     // 1. 로컬 서버에서 개발시
-    // return 'http://localhost:3000/' + ep;
-
+    return 'http://localhost:3000/' + ep;
     // 2. 클라우드 서버에서 운영시
-    return ep;
+    //return ep;
   }
 
   registerUser(user: User): Observable<any> {
@@ -56,6 +55,19 @@ export class AuthService {
     };
     const profileUrl = this.prepEndpoint('users/profile');
     return this.http.get<any>(profileUrl, httpOptions1);
+  }
+
+  getList(): Observable<any> {
+    let authToken: any = localStorage.getItem('authToken');
+    // 토큰을 포함한 헤더 옵션 생성
+    const httpOptions1 = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: 'Bearer ' + authToken,
+      }),
+    };
+    const listUrl = this.prepEndpoint('users/list');
+    return this.http.get<any>(listUrl, httpOptions1);
   }
 
   loggedIn(): boolean {
