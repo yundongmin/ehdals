@@ -1,0 +1,27 @@
+<div *ngIf="name">
+    
+  <h2 class="page-header">사용자 이름: {{ name }}</h2>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">UserInfo</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlInput1"
+      rows="1"
+      disabled
+      >{{ userString }}</textarea
+    >
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput2" class="form-label">Token</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlInput2"
+      rows="4"
+      disabled
+      >{{ token }}</textarea
+    >
+  </div>
+    
+</div>
